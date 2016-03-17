@@ -102,6 +102,8 @@ class QPackageDialog(QtGui.QDialog, FORM_CLASS):
             if(row.isChecked()):
 
                 for name, layer in layers.iteritems():
+                    # CD : Problematic special characters replacement
+                    name = layer.name().replace('/', '_')
                     if(layer.originalName() == row.text()):
                         # If the layer is a vector
                        if layer.type() == QgsMapLayer.VectorLayer:
@@ -111,8 +113,9 @@ class QPackageDialog(QtGui.QDialog, FORM_CLASS):
                                projection = layer.crs().authid()
                                if self._listeprojections.currentText() != "" :
                                    projection = self._listeprojections.currentText()
-                                # write the qgis layer to the destination directory
-                               QgsVectorFileWriter.writeAsVectorFormat(layer, self._repertoire.toPlainText() + "\\" +  layer.name()  + ".shp", "utf-8", QgsCoordinateReferenceSystem(projection), "ESRI Shapefile")
+                               # write the qgis layer to the destination directory
+                               #QgsVectorFileWriter.writeAsVectorFormat(layer, self._repertoire.toPlainText() + "\\" +  layer.name()  + ".shp", "utf-8", QgsCoordinateReferenceSystem(projection), "ESRI Shapefile")
+                               QgsVectorFileWriter.writeAsVectorFormat(layer, self._repertoire.toPlainText() + "\\" +  name  + ".shp", "utf-8", QgsCoordinateReferenceSystem(projection), "ESRI Shapefile")
 
                                # Change the projections of the layer in the project
                                layer.setCrs(QgsCoordinateReferenceSystem(projection));
@@ -154,6 +157,8 @@ class QPackageDialog(QtGui.QDialog, FORM_CLASS):
                 for row in model.getDonnees() :
                     if row.isChecked() :
                         for name, layer in layers.iteritems() :
+                            # CD : Problematic special characters replacement
+                            name = layer.name().replace('/', '_')
                             if(layer.originalName() == row.text()):
                                 if(self._repertoire.toPlainText() != ""):
                                     if layer.type() == QgsMapLayer.VectorLayer:
@@ -165,8 +170,9 @@ class QPackageDialog(QtGui.QDialog, FORM_CLASS):
                                                 if self._listeprojections.currentText() != "" :
                                                     projection = self._listeprojections.currentText()
 
-                                                replaceText(coucheprojet.getElementsByTagName('datasource')[0] ,layer.name()  + ".shp")
-                                                replaceText(coucheprojet.getElementsByTagName('provider')[0] ,"ogr")
+                                                #replaceText(coucheprojet.getElementsByTagName('datasource')[0] ,layer.name()  + ".shp")
+                                                replaceText(coucheprojet.getElementsByTagName('datasource')[0], name + ".shp")
+                                                replaceText(coucheprojet.getElementsByTagName('provider')[0],"ogr")
                                                 pr = "<spatialrefsys>"
                                                 pr = pr+"<proj4>"+str(QgsCoordinateReferenceSystem(projection).toProj4())+"</proj4>"
                                                 pr = pr+"<srsid>"+str(QgsCoordinateReferenceSystem(projection).srsid())+"</srsid>"
