@@ -54,8 +54,8 @@
     <name>mustclose</name>
     <message>
         <location filename="QPackage_dialog.py" line="120"/>
-        <source>You must close Qgis to take into account changes</source>
-        <translation>Vous devez fermer Qgis pour tenir compte des changements</translation>
+        <source>You have to re-open project to check changes</source>
+        <translation>Vous devez ré-ouvrir le projet pour vérifier les modifications</translation>
     </message>
 </context>
 <context>
