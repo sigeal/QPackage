@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'QPackage_dialog_base.ui'
 #
-# Created: Tue Mar 03 13:42:06 2015
+# Created: Thu Mar 17 17:05:23 2016
 #      by: PyQt4 UI code generator 4.10.2
 #
 # WARNING! All changes made in this file will be lost!
