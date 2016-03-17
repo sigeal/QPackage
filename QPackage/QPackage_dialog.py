@@ -102,7 +102,7 @@ class QPackageDialog(QtGui.QDialog, FORM_CLASS):
             if(row.isChecked()):
 
                 for name, layer in layers.iteritems():
-                    # CD : Problematic special characters replacement
+                    # CD : Problematic special characters replacement (/)
                     name = layer.name().replace('/', '_')
                     if(layer.originalName() == row.text()):
                         # If the layer is a vector
@@ -195,7 +195,8 @@ class QPackageDialog(QtGui.QDialog, FORM_CLASS):
                 file_handle.write(DOMTree.toxml())
                 file_handle.close()
                 self._progression.setValue(100)
-            QMessageBox.warning(self, QtGui.QApplication.translate("QPackage", "QPackage"), QtGui.QApplication.translate("mustclose", "You must close Qgis to take into account changes"));
+            #QMessageBox.warning(self, QtGui.QApplication.translate("QPackage", "QPackage"), QtGui.QApplication.translate("mustclose", "You must close Qgis to take into account changes"));
+            QMessageBox.warning(self, QtGui.QApplication.translate("QPackage", "QPackage"), QtGui.QApplication.translate("mustclose", "You have to re-open project to check changes"));
 
 
 
