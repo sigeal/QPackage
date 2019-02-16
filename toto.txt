@@ -1,0 +1,12 @@
+ Le volume dans le lecteur D n'a pas de nom.
+ Le num‚ro de s‚rie du volume est 00F7-84FC
+
+ R‚pertoire de D:\gitest\QPackage
+
+16/02/2019  19:24    <DIR>          .
+16/02/2019  19:24    <DIR>          ..
+16/02/2019  19:16    <DIR>          QPackage
+16/02/2019  19:16               267 README.md
+16/02/2019  19:24                 0 toto.txt
+               2 fichier(s)              267 octets
+               3 R‚p(s)  745ÿ518ÿ776ÿ320 octets libres
