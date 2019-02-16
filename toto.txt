@@ -10,4 +10,6 @@
 16/02/2019  19:24                 0 toto.txt
                2 fichier(s)              267 octets
                3 R‚p(s)  745ÿ518ÿ776ÿ320 octets libres
-Modification en ligne 
+Modification en ligne
+
+Modification locale
