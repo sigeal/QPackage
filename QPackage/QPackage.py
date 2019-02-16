@@ -29,7 +29,7 @@ import resources_rc
 from QPackage_dialog import QPackageDialog
 import os.path
 
-
+# Fork SIGéal
 class QPackage:
     """QGIS Plugin Implementation."""
 
